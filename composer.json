@@ -1,0 +1,28 @@
+{
+  "name": "drishu/php-recommender-system",
+  "description": "A PHP client library for recommender systems.",
+  "type": "library",
+  "license": "EUPL-1.2",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Drishu\\RecommendationSystem\\": "./src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Drishu\\Tests\\RecommendationSystem\\": "./tests/src/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+    }
+  }
+}
