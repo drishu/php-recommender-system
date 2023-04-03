@@ -1,6 +1,9 @@
 <?php
 
-// Replace these values with your database information
+require_once './vendor/autoload.php';
+
+use Drishu\RecommendationSystem\RecommendationStrategy\RandomGuessingStrategy;
+
 $db_host = '127.0.0.1';
 $db_user = 'root';
 $db_password = 'root';
@@ -36,6 +39,9 @@ $correct_count = 0;
 // Define the batch size
 $batch_size = 1000;
 
+// Create a new instance of the RandomGuessingStrategy class
+$strategy = new RandomGuessingStrategy();
+
 // Loop over the probes in batches
 $sql = "SELECT * FROM probe LIMIT $batch_size";
 $offset = 0;
@@ -49,9 +55,7 @@ while ($result = $mysqli->query($sql)) {
     while ($row = $result->fetch_assoc()) {
         $movie_id = $row['movie_id'];
         $user_id = $row['user_id'];
-
-        // Choose a random rating between 1 and 5
-        $guess = rand(1, 5);
+        $guess = $strategy->estimateUserRating($movie_id, $user_id, $mysqli);
 
         // Check if the guess matches the actual rating
         $sql2 = "SELECT rating FROM ratings WHERE movie_id = $movie_id AND user_id = $user_id";
