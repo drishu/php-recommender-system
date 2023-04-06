@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drishu\RecommendationSystem\Contract;
 
 interface Feature
