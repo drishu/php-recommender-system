@@ -15,7 +15,7 @@ use Drishu\RecommendationSystem\Contract\FeatureInterface;
  * Based on these similarities, the system can recommend items that are similar to the ones
  * a user has interacted with before.
  */
-class ContentBasedRecommender implements RecommendationStrategyInterface
+class ContentBasedStrategy implements RecommendationStrategyInterface
 {
     /**
      * @var FeatureInterface[] An array of features used to calculate the similarity between items.
