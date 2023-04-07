@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Drishu\RecommendationSystem\Feature;
+
 use Drishu\RecommendationSystem\Contract\EncoderInterface;
 use Drishu\RecommendationSystem\Contract\FeatureInterface;
 use Drishu\RecommendationSystem\Contract\SimilarityInterface;
