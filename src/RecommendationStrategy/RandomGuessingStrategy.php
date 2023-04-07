@@ -12,4 +12,14 @@ class RandomGuessingStrategy implements RecommendationStrategyInterface
     {
         return rand(1, 5);
     }
+
+    public function calculateSimilarity(array $item1, array $item2): float
+    {
+        return 0;
+    }
+
+    public function recommend(array $userInteractions, array $allItems): array
+    {
+        return [];
+    }
 }
